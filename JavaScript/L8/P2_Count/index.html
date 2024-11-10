@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Counting Application</title>
+    <style>
+      *{font-size:120%;}
+      textarea{resize:none;}
+      body{background-color:orange;}
+    </style>
+  </head>
+  <body>
+    <center>
+      <form>
+	Character & Word Counter
+ 	<br/><br/>
+	<textarea placeholder="Enter Text" id="txt" rows=5  cols=30></textarea>
+       </form>
+       <h2 id="ans"></h2>
+     <script>
+	let txt = document.getElementById("txt")
+	let ans = document.getElementById("ans")
+	
+	txt.addEventListener("input",function(){
+	  let cc = txt.value.length;
+	  let wc = txt.value.split(" ").length;
+	  if(cc==0)
+	  {
+	    wc=0;
+	  }
+	  let msg = "Character Count = " + cc + "        Word Count = " + wc;
+	  ans.innerHTML=msg;
+	});
+     </script>
+    </center>
+  </body>  
+</html>

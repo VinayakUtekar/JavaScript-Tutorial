@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>KCCD</title>
+    <style>*{font-size:110%}</style>
+    <script>
+	function order()
+	{
+ 	  let name = document.getElementById("name");
+	  let msg = document.getElementById("msg");
+          let s = document.getElementById("small");
+          let m = document.getElementById("medium");
+          let l = document.getElementById("large");
+          let select = "";
+          if(name.value=="")
+	  {
+	    alert("Name is empty");
+            name.focus();
+            msg.innerHTML="";
+            return;
+	  }
+	  if(!name.value.match(/^[A-Za-z ]+$/))
+ 	  {
+	    alert("Invalid Input");
+            name.focus();
+	    name.value="";
+            msg.innerHTML="";
+            return;
+	  }
+          if(s.checked)		select="Small";
+          else if(m.checked)	select="Medium";
+          else			select="Large";
+          let ans = name.value + " Ordered " + select + " Size Coffee";
+          msg.innerHTML = ans;
+         }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Cafe Coffee with Kamal</h1>
+      <input type="text" placeholder="Enter your name " id="name"/>
+      <br/><br/>
+      <input type="radio" name="s" value="small" id="small"> Small </input>
+      <input type="radio" name="s" value="medium" id="medium" checked=true> Medium </input>
+      <input type="radio" name="s" value="large" id="large"> Large </input>
+      <br/></br>
+      <input type="submit" value="Order" onclick="order()"/>
+      <h2 id="msg"></h2>
+    </center>
+  </body>
+</html>

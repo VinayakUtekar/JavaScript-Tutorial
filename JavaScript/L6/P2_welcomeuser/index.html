@@ -1,0 +1,21 @@
+<html>
+ <head>
+   <title>Welcome Application</title>
+ </head>
+ <body>
+  <center>
+   <br/>
+   <h1 style="font-size:100px; color:red;" id="msg"></h1>
+   <script>
+     let msg = document.getElementById("msg");
+     let d = new Date();
+     let h = d.getHours();
+     let ans = "";
+     if(h < 12)	ans = "Good Morning";
+     else if(h < 16)	ans = "Good Afternoon";
+     else		ans = "Good Evening";
+     msg.innerHTML = ans;
+   </script>
+  </center>
+ </body>
+</html>

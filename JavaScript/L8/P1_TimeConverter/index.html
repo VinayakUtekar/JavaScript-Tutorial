@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Converter App</title>
+    <style>
+      *{font-size:40px;}
+      body{background-color:lightblue;}
+    </style>
+  </head>
+  <body>
+    <center
+      <h1> Time Converter</h1>
+      <br/><br/>
+      <form>
+	Time in Minutes
+ 	<br/>
+	<input type="number" step="any" id="minutes"  placeholder="Enter Time In Minutes"/>
+	<br/><br/>
+	Time in Seconds
+	<br/>
+	<input type="number" step="any" id="seconds" placeholder="Enter Time In Seconds"/>
+      </form>
+     <script>
+	let minutes = document.getElementById("minutes");
+	let seconds = document.getElementById("seconds");
+	minutes.addEventListener("input",function(){
+	  let m = parseFloat(minutes.value);
+	  if(m<0)
+	  {
+	    alert("Invalid Input");
+	    minutes.value="";
+	    minutes.focus();
+	  }
+	  else
+	  {
+	    let s = m * 60;
+	    seconds.value = s;
+	  }
+        });
+
+	seconds.addEventListener("input",function(){
+	  let s = parseFloat(seconds.value);
+	  if(s<0)
+	  {
+	    alert("Invalid Input");
+	    seconds.value="";
+	    seconds.focus();
+	  }
+	  else
+	  {
+	    let m = s / 60;
+	    minutes.value = m;
+	  }
+	});
+     </script>
+    </center>
+  </body>  
+</html>

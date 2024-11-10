@@ -1,0 +1,33 @@
+<html>
+ <head>
+   <title>Welcome Application</title>
+   <style>
+	*{font-size:50px;}
+   </style>
+ </head>
+ <body>
+  <center>
+   <br/>
+   <h1>Welcome Application</h1>
+   <input type="text" placeholder="Enter You'r Name" id="name"/>
+   <br/><br/>
+   <input type="submit" onclick="welcome()"/>
+   <h1 id="msg"></h1>
+   <script>
+     function welcome()
+     {
+	let name = document.getElementById("name");
+	let msg = document.getElementById("msg");
+	let d = new Date();
+     	let h = d.getHours();
+	let ans1 = "";
+     	if(h < 12)	ans1 = "Good Morning";
+     	else if(h < 16)	ans1 = "Good Afternoon";
+     	else		ans1 = "Good Evening";
+	let ans = "welcome " + name.value + " " + ans1;
+	msg.innerHTML = ans;
+    }
+   </script>
+  </center>
+ </body>
+</html>

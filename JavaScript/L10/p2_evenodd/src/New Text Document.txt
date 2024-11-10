@@ -1,0 +1,5 @@
+Export default functionname
+if deaflt use direct function nme
+export {functionmame}
+if default not used we have to ise {} to export function
+and alos use {} while importing in App.js

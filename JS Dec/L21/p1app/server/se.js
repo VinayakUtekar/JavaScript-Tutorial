@@ -1,0 +1,19 @@
+const http = require("http");
+const url = require("url");
+
+const server = http.createServer((req,res) => {
+ res.setHeader("Access-Control-Allow-Origin","*");
+
+let path = url.parse(req.url, true)
+
+if(path.pathname = "/find")
+{
+  let num = path.query.number;
+  let ans = num % 2 == 0?"even":"odd";
+  res.write(ans);
+  res.end();
+}
+
+})
+
+server.listen(7000, () => {console.log("Server ready @ 7000")})

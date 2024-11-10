@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Even/Odd Application</title>
+    <style>*{font-size:120%}</style>
+    <script>
+	function evenodd()
+	{
+ 	  let number = document.getElementById("num");
+	  let msg = document.getElementById("msg");
+	  if(num.value == "")
+	  {
+	    alert("Eneter a Number");
+            num.focus();
+            msg.innerHTML="";
+            return;
+	  }
+	  if(!num.value.match(/^[-0-9]+$/))
+	  {
+	    alert("Enter Integers Only");
+	    num.value="";
+            num.focus();
+            msg.innerHTML="";
+            return;
+	  }
+	  let n = parseInt(num.value);
+	  let res = n % 2 == 0 ? "Even" : "Odd"
+          let ans = n + " is " + res;
+	  msg.innerHTML = ans;
+	}
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Even or Odd Finder</h1>
+      <input type="number" placeholder="Enter an Integer" id="num"/>
+      <br/><br/>
+      <input type="submit" value="Find" onclick="evenodd()"/>
+      <h2 id="msg"></h2>
+    </center>
+  </body>
+</html>

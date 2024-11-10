@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:120%;border-radius:20px;}
+    </style>
+  </head>
+  <body>
+    <center>
+    <h1>Temperature Converter<h1>
+    <form>
+      Temp in Celcius
+	<br/>
+	<input type="number"  step"any" placeholder="Enter in Celcius" id="cel"/>
+	<br/><br/>
+	Temp in Fahranite
+	<br/>
+	<input type="number" step="any" placeholder="Enter in Fahranite" id="fah"/>
+	<br/><br/>
+    </form>
+    <script>
+	let cel = document.getElementById("cel");
+	let fah = document.getElementById("fah");
+	cel.addEventListener("input",function(){
+	  let c = parseFloat(cel.value);
+	  let f = c * 1.8 + 32;
+	  fah.value = f.toFixed(2);
+	});
+	fah.addEventListener("input",function(){
+	  let f = parseFloat(fah.value);
+	  let c = (f - 32) / 1.8;
+	  cel.value = c.toFixed(2);
+	});
+    </script>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:130%;border-radius:20px;}
+    </style>
+    <script>
+       function gen(event)
+       {
+         event.preventDefault();
+	   color = "#" + ((1<<24)*Math.random() | 0).toString(16);
+	   //let color =["red","yellow","green","pink","blue","brown","orange"];
+	   let r = parseInt(Math.random()*color.length);
+	   document.body.style.background = color;//[r];
+       }
+    </script>
+  </head>
+  <body>
+    <center>
+      <form onsubmit="return gen(event)">
+	<br/><br/><br/><br/><br/>
+	<input type="submit" value="Change Color"/>
+      </form>
+    </center>
+  </body>
+</html>

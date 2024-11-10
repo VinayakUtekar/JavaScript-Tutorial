@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <style>
+      *{font-size:120%;}
+      body{background-color:lightpink;}
+    </style>
+    <script>
+	function convert(event){
+	  event.preventDefault();
+	  let usd = document.getElementById("usd");
+	  let ans = document.getElementById("ans");
+	  if(usd.value=="")
+	  {
+	    alert("Inavlis Input");
+	    usd.focus();
+	    ans.innerHTML = ""; 
+            return;
+	  }
+	  let aid = parseFloat(usd.value);
+	  if(aid<=0.0)
+	  {
+	    alert("Inavlis Input");
+	    usd.value="";
+	    usd.focus();
+	    ans.innerHTML = ""; 
+            return;
+	  }
+	  let air = aid * 80;
+	  let msg = "amount in Rs " + air.toFixed(2);
+	  ans.innerHTML = msg;
+	}
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>USD to INR Currency Conveter</h1>
+      <form onsubmit="return convert(event)">
+	<input type="number" step="any" id="usd" placeholder="Enter Amount in $$"/>
+	<br/><br/>
+	<input type="submit" value="Convert"/>
+      </form>
+       <h2 id="ans"></h2>
+    </center>
+  </body>  
+</html>

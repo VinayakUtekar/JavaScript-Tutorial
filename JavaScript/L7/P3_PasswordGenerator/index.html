@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:120%;}
+    </style>
+    <script>
+       function gen(event)
+       {
+         event.preventDefault();
+         let text = "abcdefghijklmnopqurstuvwxyz";
+	 let len = document.getElementById("len");
+	 let uc = document.getElementById("uc");
+	 let di = document.getElementById("di");
+	 let ans = document.getElementById("ans");
+	 if(uc.checked)
+	 {
+ 		text = text + text.toUpperCase();
+	 }
+	 if(di.checked)
+	 {
+ 		text = text + "0123456789";
+	 }
+	 let pw = "";
+	 for(let i=1; i<= len.value; i++)
+	 {
+	   let r = parseInt(Math.random()*text.length)
+	   pw = pw + text[r];
+	 }
+	 ans.innerHTML = "Password : "+pw;
+       }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Password Generation Application</h1>
+      <br/>
+      <form onsubmit="return gen(event)">
+	<select id="len">
+	  <option value="6">6</option>
+	  <option value="7">7</option>
+	  <option value="8">8</option>
+	  <option value="9">9</option>
+	  <option value="10">10</option>
+	  <option value="11">11</option>
+	  <option value="12">12</option>
+	</select>
+	<br/><br/>
+        <input type ="checkbox" id="uc" name="uc"/>UpperCase
+ 	<input type ="checkbox" id="di" name="di"/>Digits
+	<br/><br/>
+	<input type="submit" value="Generate Password"/>
+      </form>
+      <h2 id="ans"  ></h2>
+    </center>
+  </body>
+</html>

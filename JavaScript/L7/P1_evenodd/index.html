@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:110%;}
+    </style>
+    <script>
+       function find(event)
+       {
+         event.preventDefault();
+         let num = document.getElementById("num");
+         if(num.value=="")
+         {
+           alert("Invalid Input");
+	   num.focus();
+	   ans.innerHTML="";
+           return;
+         }
+         let and = document.getElementById("ans");
+	 let n = parseInt(num.value);
+	 let r = n % 2 == 0 ? " Even " : " Odd ";
+	 let msg = n + " is a " + r + " number";
+	 ans.innerHTML = msg;
+       }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Even Odd Application</h1>
+      <form onsubmit="return find(event)">
+        <input type ="number" placeholder="Enter an Integer" id="num"/>
+	<br/><br/>
+	<input type="submit" value="Find"/>
+      </form>
+      <h2 id="ans"  ></h2>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:130%;border-radius:20px;}
+    </style>
+  </head>
+  <body>
+    <center>
+    <script>
+       function show()
+       {
+	   //color = "#" + ((1<<24)*Math.random() | 0).toString(16);
+	   let color =["red","yellow","green","pink","blue","brown","orange"];
+	   let r = parseInt(Math.random()*color.length);
+	   document.body.style.background = color[r];
+       }
+       show();
+       setInterval(show,3000);
+    </script>
+    </center>
+  </body>
+</html>

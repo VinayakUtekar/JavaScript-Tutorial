@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title> Web Application Using JS</title>
+    <style>
+       *{font-size:120%;}
+       h1{background-color:brown; color:white; width:50%}
+    </style>
+    <script>
+       function find(event)
+       {
+         event.preventDefault();
+         let num = document.getElementById("num");
+         if(num.value=="")
+         {
+           alert("Invalid Input");
+	   num.focus();
+	   ans.innerHTML="";
+           return;
+         }
+         let and = document.getElementById("ans");
+	 let n = parseInt(num.value);
+         if(n < 0)
+         {
+           alert("No Negative Input Allowed");
+	   num.value="";
+	   num.focus();
+	   ans.innerHTML="";
+           return;
+         }
+	 let r = n ** 0.5;
+	 r = r.toFixed(2);
+	 let msg = "Square Root of "+ n + " is " + r;
+	 ans.innerHTML = msg;
+       }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>SquareRoot Application</h1>
+      <br/>
+      <form onsubmit="return find(event)">
+        <input type ="number" step="any" placeholder="Enter a Number" id="num"/>
+	<br/><br/>
+	<input type="submit" value="Find"/>
+      </form>
+      <h1 id="ans"  ></h>
+    </center>
+  </body>
+</html>
